@@ -18,7 +18,7 @@ function getRequest(searchTerm){
     // });
     // console.log(data.items[0].snippet.title);
     // console.log(myData);
-    // var videoTitle = data.items[0].snippet.title
+    // var videOTitle = data.items[0].snippet.title
     // var videoId = data.items[0].id.videoId; //gets videoId
 
 
@@ -28,8 +28,8 @@ function getRequest(searchTerm){
   		data.items.map(function(item) {
     	   var id = item.id.videoId;
     	   var title = item.snippet.title;
-    	   var thumbnail = item.snippet.thumbnails.default.url;
-			   $('.searchResults').append("<div class='col-xs-6'><a href='http://www.youtube.com/watch?v=" + id + "'><img class='col-xs-6 col-sm-2' src='" + thumbnail + "'></a><p class='videoTitle'>" + title + "</p></div>");
+    	   var thumbnail = item.snippet.thumbnails.high.url;
+			   $('.searchResults').append("<div class='resultsContainer'><a href='http://www.youtube.com/watch?v=" + id + "'><img src='" + thumbnail + "'></a><p class='videoTitle'>" + title + "</p></div>");
 	
   		});
 	});
@@ -41,6 +41,7 @@ function getRequest(searchTerm){
 $(function() {
   $('#searchTerm').on('submit', function(e) {
     e.preventDefault();
+    $('.searchResults').html("");
     var searchQuery = $('#query').val(); //captures user search
     var searchResults = getRequest(searchQuery);
     //console.log(getRequest('dogs'));
