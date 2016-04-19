@@ -1,6 +1,7 @@
 function getRequest(searchTerm){
   var params = {
 	part: 'snippet',
+	maxResults: 6,
 	key: 'AIzaSyA41PJXhkKXL0Je1kdPm_-Y4a320U58KE8', 
 	q: searchTerm,
 	}
@@ -28,7 +29,8 @@ function getRequest(searchTerm){
     	  var id = item.id.videoId;
     	  var title = item.snippet.title;
     	  var thumbnail = item.snippet.thumbnails.default.url;
-			$('.searchResults').append("<img src='" + thumbnail + "'>")
+			$('.searchResults').append("<div><a href='http://www.youtube.com/watch?v=" + id + "'><img class='col-xs-6 col-sm-2' src='" + thumbnail + "'></a><label class='videoTitle'>" + title + "</label></div>");
+
 	
   		});
 	});
