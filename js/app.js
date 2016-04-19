@@ -26,11 +26,10 @@ function getRequest(searchTerm){
 
   		console.log(data);
   		data.items.map(function(item) {
-    	  var id = item.id.videoId;
-    	  var title = item.snippet.title;
-    	  var thumbnail = item.snippet.thumbnails.default.url;
-			$('.searchResults').append("<div><a href='http://www.youtube.com/watch?v=" + id + "'><img class='col-xs-6 col-sm-2' src='" + thumbnail + "'></a><label class='videoTitle'>" + title + "</label></div>");
-
+    	   var id = item.id.videoId;
+    	   var title = item.snippet.title;
+    	   var thumbnail = item.snippet.thumbnails.default.url;
+			   $('.searchResults').append("<div class='col-xs-6'><a href='http://www.youtube.com/watch?v=" + id + "'><img class='col-xs-6 col-sm-2' src='" + thumbnail + "'></a><p class='videoTitle'>" + title + "</p></div>");
 	
   		});
 	});
