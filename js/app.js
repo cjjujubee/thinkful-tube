@@ -10,18 +10,6 @@ function getRequest(searchTerm){
   $.getJSON(url, params, function(data){
     var myData = data.items;
 
-    // myData.map(function(item) {
-    // 	console.log(item.snippet.title)
-    // });
-    // $.each(myData, function(index, value){
-    //   console.log(value.title);
-    // });
-    // console.log(data.items[0].snippet.title);
-    // console.log(myData);
-    // var videOTitle = data.items[0].snippet.title
-    // var videoId = data.items[0].id.videoId; //gets videoId
-
-
     }).done(function (data){
 
   		console.log(data);
